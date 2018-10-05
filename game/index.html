@@ -3,6 +3,7 @@
     <title>Conway's Game of Life</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="src/conway.css">
 </head>
 
 <body>
@@ -13,8 +14,8 @@
     <div class="commands">
         <div class="boardSizeDiv">
             <label for="fieldSize">Board size</label>
-            <input type="text" name="fieldSize" value="10">
-            <input type="button" id="submitFieldSize" name="submitFieldSize" value="Refresh">
+            <input type="text" id="fieldSize" name="fieldSize" value="10">
+            <input type="button" id="submitFieldSize" name="submitFieldSize" value="Refresh" onclick="initEmptyBoard();">
         </div>
         <div class="simulCommands">
             <label for="simulSpeed">Steps per second</label>
