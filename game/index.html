@@ -8,26 +8,22 @@
 
 <body>
     <div class="header">
-        <h1>Conway's Game of Life</h2>
+        <h1>Conway's Game of Life</h1>
     </div>
 
     <div class="commands">
         <div class="boardSizeDiv">
             <label for="fieldSize">Board size</label>
             <input type="text" id="fieldSize" name="fieldSize" value="10">
-            <input type="button" id="submitFieldSize" name="submitFieldSize" value="Refresh" onclick="initEmptyBoard();">
+            <input type="button" id="submitFieldSize" name="submitFieldSize" value="Refresh" onclick="boardCtrl(1);">
         </div>
         <div class="simulCommands">
-            <label for="simulSpeed">Steps per second</label>
+            <label for="simulSpeed">Simulation speed</label>
             <input type="range" id="simulSpeed" name="simulSpeed" min="1" max="10" value="5"/>
             <span id="speedSpan"></span><br>
-            <input type="button" id="startSimul" name="startSimul" value="Start">
-            <input type="button" id="stopSimul" name="stopSimul" value="Stop">
-            <input type="button" id="simulSpeed" name="makeStep" value="One step">
-        </div>
-        <div class="optionsDiv">
-            <label for="saveImg">Save current automata state to JPG</label>
-            <input type="button" id="saveImg" name="saveImg" value="Save">
+            <input type="button" id="simulCtrl" name="simulCtrl" value="Start" onclick="simulate();">
+            <input type="button" id="stopSimul" name="stopSimul" value="Stop" onclick="stopSimul = true;">
+            <input type="button" id="simulSpeed" name="makeStep" value="One step" onclick="boardCtrl(0);">
         </div>
     </div>
 

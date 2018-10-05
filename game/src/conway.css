@@ -8,3 +8,7 @@ td {
     padding: 0;
     border: 1px dotted rgb(180, 180, 180);
 }
+
+.selected {
+    background-color: yellow;
+}
