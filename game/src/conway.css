@@ -105,3 +105,17 @@ input[type=range] {
     font-style: italic;
     font-size: 10px;
 }
+
+@media screen and (max-width: 1000px) {
+    .commands {
+        width: 100%;
+    }
+
+    #gridHolder {
+        width: 98%;
+    }
+
+    #footerNote {
+        width: 98%;
+    }
+}
