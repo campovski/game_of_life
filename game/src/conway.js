@@ -8,6 +8,7 @@ window.onload = function() {
 
     document.onmousedown = function() { isMouseDown = 1; };
     document.onmouseup = function() { isMouseDown = 0; };
+    document.oncontextmenu = function() { return false; };
 
     board = [];
     previousBoard = [];
@@ -52,7 +53,8 @@ generateBoardString = function(clear) {
             boardString += '\t\t<td id="row' + i.toString() + 'col' + j.toString()
                             + '" onmousedown="isMouseDown = 1; selectField(' + i.toString() + ', ' + j.toString() +
                             ');" onmouseenter="selectField(' + i.toString() + ', ' + j.toString() +
-                            ');" style="width: ' + cellSize.toString() + 'px;"';
+                            ');" oncontextmenu="removeField(' + i.toString() + ', ' + j.toString() +
+                            ')" style="width: ' + cellSize.toString() + 'px;"';
             if (board[i][j]) {
                 boardString += ' class="selected"';
             }
@@ -77,6 +79,7 @@ selectField = function(i, j) {
 removeField = function(i, j) {
     board[i][j] = 0;
     document.getElementById("row" + i.toString() + "col" + j.toString()).classList.remove("selected");
+    isMouseDown = false;
 }
 
 
@@ -137,10 +140,7 @@ simulate = async function() {
         speed = document.getElementById("simulSpeed").value;
         await sleep(1000 / speed);
         boardCtrl(false);
-        if (stopSimul) {
-            return;
-        }
-    } while (!boardsEqual(board, previousBoard));
+    } while (!boardsEqual(board, previousBoard) && !stopSimul);
     stopSimul = true;
 }
 
