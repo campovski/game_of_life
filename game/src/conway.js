@@ -1,3 +1,5 @@
+window.addEventListener("contextmenu", function(e) { e.preventDefault(); })
+
 window.onload = function() {
     isMouseDown = 0;
     speed = document.getElementById("simulSpeed").value;
