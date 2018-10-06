@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -11,4 +17,91 @@ td {
 
 .selected {
     background-color: yellow;
+}
+
+.commands {
+    width: 20%;
+    margin: 10px auto;
+}
+
+.simulCommands, .boardSizeDiv {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#header {
+    width: 100%;
+    margin: 5px auto 0 auto;
+    text-align: center;
+}
+
+#content {
+    width: 100%;
+}
+
+#gridHolder {
+    width: 80%;
+    margin: 25px auto;
+}
+
+table {
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-variant: small-caps;
+}
+
+input[type=button] {
+    width: 30%;
+    text-align: center;
+    padding: 5px 0;
+}
+
+#simulCtrl {
+    background-color: green;
+}
+
+#stopSimul {
+    background-color: red;
+}
+
+#makeStep {
+    background-color: orange;
+}
+
+#submitFieldSize {
+    background-color: rgb(230, 230, 230);
+    border: 1px solid rgb(200, 200, 200);
+}
+
+input[type=text] {
+    border-bottom: 2px solid grey;
+    width: 40px;
+    text-align: center;
+    font-size: 15px;
+    margin: 10px;
+}
+
+input[type=range] {
+    margin-bottom: 10px;
+}
+
+#footer {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#footerNote {
+    width: 40%;
+    margin: 0 auto;
+    text-align: justify;
+}
+
+#footerNote > p {
+    font-family: "Courier New", monospace;
+    font-style: italic;
+    font-size: 10px;
 }

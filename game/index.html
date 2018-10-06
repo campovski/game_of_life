@@ -7,28 +7,39 @@
 </head>
 
 <body>
-    <div class="header">
+    <div id="header">
         <h1>Conway's Game of Life</h1>
     </div>
 
-    <div class="commands">
-        <div class="boardSizeDiv">
-            <label for="fieldSize">Board size</label>
-            <input type="text" id="fieldSize" name="fieldSize" value="10">
-            <input type="button" id="submitFieldSize" name="submitFieldSize" value="Refresh" onclick="boardCtrl(1);">
+    <div id="content">
+        <div class="commands">
+            <div class="boardSizeDiv">
+                <label for="fieldSize">Board size</label>
+                <input type="text" id="fieldSize" name="fieldSize" value="10">
+                <input type="button" id="submitFieldSize" name="submitFieldSize" value="Refresh" onclick="boardCtrl(1);"><br>
+            </div>
+            <div class="simulCommands">
+                <label for="simulSpeed">Simulation speed</label>
+                <input type="range" id="simulSpeed" name="simulSpeed" min="1" max="10" value="5"/>
+                <span id="speedSpan"></span><br>
+                <input type="button" id="simulCtrl" name="simulCtrl" value="Start" onclick="simulate();">
+                <input type="button" id="stopSimul" name="stopSimul" value="Stop" onclick="stopSimul = true;">
+                <input type="button" id="makeStep" name="makeStep" value="One step" onclick="boardCtrl(0);">
+            </div>
         </div>
-        <div class="simulCommands">
-            <label for="simulSpeed">Simulation speed</label>
-            <input type="range" id="simulSpeed" name="simulSpeed" min="1" max="10" value="5"/>
-            <span id="speedSpan"></span><br>
-            <input type="button" id="simulCtrl" name="simulCtrl" value="Start" onclick="simulate();">
-            <input type="button" id="stopSimul" name="stopSimul" value="Stop" onclick="stopSimul = true;">
-            <input type="button" id="simulSpeed" name="makeStep" value="One step" onclick="boardCtrl(0);">
+
+        <div id="gridHolder">
+            <!-- Here JS will populate the grid, depending on current automata state and grid size. -->
         </div>
     </div>
 
-    <div id="gridHolder">
-        <!-- Here JS will populate the grid, depending on current automata state and grid size. -->
+    <div id="footer">
+        <div id="footerNote">
+            <p>This is an implementation of Conway's Game of Life in JavaScript. This was made as a homework
+            project for course Numerical modelling of physical phenomena in engineering, biology and medicine on
+            Masters program of Electrical Engineering at University of Ljubljana, Faculty of Electrical Engineering.
+            Code is available at <a href="https://github.com/campovski/game_of_life/">https://github.com/campovski/game_of_life/</a>.</p>
+        </div>
     </div>
 
 

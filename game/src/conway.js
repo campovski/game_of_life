@@ -1,6 +1,5 @@
 window.onload = function() {
     isMouseDown = 0;
-    // get size of board
     speed = document.getElementById("simulSpeed").value;
     document.getElementById("speedSpan").innerHTML = speed;
     document.getElementById("simulSpeed").oninput = function() {
@@ -20,7 +19,7 @@ calculateCellSize = function(n) {
     var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-    return Math.min(width, height * 0.7) / n;
+    return Math.min(width * 0.8, height * 0.6) / n;
 }
 
 
